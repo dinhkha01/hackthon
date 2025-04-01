@@ -114,7 +114,7 @@ public class StudentBusiness {
             student.displayDate();
         }
     }
-    public void sortBySpaG() {
+    public void sortBySpa() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = i + 1; j < size; j++) {
                 if (students[i].getGpa() > students[j].getGpa()) {
@@ -127,17 +127,18 @@ public class StudentBusiness {
         System.out.println("Đã sắp xếp thành công theo GPA (giảm dần)");
         showAllStudent();
     }
-    public void sortBySpaT() {
+    public void sortByNameAscending() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = i + 1; j < size; j++) {
-                if (students[i].getGpa() < students[j].getGpa()) {
+
+                if (students[i].getStudentName().compareToIgnoreCase(students[j].getStudentName()) > 0) {
                     Student temp = students[i];
                     students[i] = students[j];
                     students[j] = temp;
                 }
             }
         }
-        System.out.println("Đã sắp xếp thành công theo GPA (giảm dần)");
+        System.out.println("Đã sắp xếp thành công theo tên (A-Z)");
         showAllStudent();
     }
 }

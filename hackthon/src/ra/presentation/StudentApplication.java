@@ -37,10 +37,10 @@ public class StudentApplication {
                     break;
 
                 case 5:
-
+    
                     break;
                 case 6:
-
+                    sortStudent();
                     break;
                 case 7:
                     System.exit(0);
@@ -113,6 +113,28 @@ public class StudentApplication {
                 case 0:
                     System.out.println("Thoát cập nhật thông tin nhân viên.");
                     studentBusiness.updateEmployee(student);
+                    return;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ! Vui lòng nhập lại.");
+            }
+        }
+    }
+    public static void sortStudent(){
+        while(true){
+            System.out.println("1. T");
+            System.out.println("2. Năm sinh");
+            System.out.println("0. Thoát");
+            System.out.print("Chọn thông tin muốn cập nhật: ");
+            int choice = Integer.parseInt(sc.nextLine());
+            switch (choice){
+                case 2:
+                    studentBusiness.sortByNameAscending();
+                    break;
+                case 3:
+                    studentBusiness.sortBySpa();
+                    break;
+                case 0:
+                    System.out.println("Thoát sort.");
                     return;
                 default:
                     System.out.println("Lựa chọn không hợp lệ! Vui lòng nhập lại.");
